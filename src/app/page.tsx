@@ -1,103 +1,113 @@
-import Image from "next/image";
+import Image from "next/image"
+import Link from "next/link"
+import { Search } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-white">
+      <div className="relative">
+        {/* Red background overlay */}
+        <div className="absolute inset-0 w-1/3 bg-red-600 right-0 z-0"></div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="container mx-auto px-4 py-8 relative z-10">
+          {/* Header */}
+          <header className="flex justify-between items-center mb-12">
+            <div className="text-2xl font-bold tracking-tighter">
+              <h1>FENÓMENO</h1>
+            </div>
+
+            <nav className="hidden md:flex space-x-8 text-sm font-medium">
+              <Link href="#" className="hover:text-red-600 transition-colors">
+                CARRERA
+              </Link>
+              <Link href="#" className="hover:text-red-600 transition-colors">
+                EQUIPOS
+              </Link>
+              <Link href="#" className="hover:text-red-600 transition-colors">
+                MUNDIAL
+              </Link>
+              <Link href="#" className="hover:text-red-600 transition-colors">
+                NOTICIAS
+              </Link>
+            </nav>
+
+            <div className="flex items-center space-x-4">
+              <button className="p-2 rounded-full hover:bg-gray-100">
+                <Search className="h-5 w-5" />
+              </button>
+              <Link
+                href="#"
+                className="bg-red-600 text-white px-4 py-2 text-sm font-medium rounded hover:bg-red-700 transition-colors"
+              >
+                GALERÍA
+              </Link>
+            </div>
+          </header>
+
+          {/* Main content */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Left column - Player info */}
+            <div className="space-y-6">
+              <h2 className="text-5xl font-bold tracking-tight">RONALDO</h2>
+              <p className="text-xl text-gray-600">El Fenómeno del Fútbol</p>
+
+              <div className="relative mt-12">
+                <Image
+                  src="/placeholder.svg?height=500&width=400"
+                  alt="Ronaldo Nazario"
+                  width={400}
+                  height={500}
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
+              <div className="flex items-center mt-8 border-t pt-4">
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                  <Image
+                    src="/placeholder.svg?height=30&width=30"
+                    alt="Brazil flag"
+                    width={30}
+                    height={30}
+                    className="rounded-full"
+                  />
+                </div>
+                <div className="ml-4">
+                  <p className="text-xs text-gray-500">SIGUIENTE</p>
+                  <p className="font-medium">ZIDANE</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right column - Player stats */}
+            <div className="space-y-10 md:pl-12">
+              <p className="text-sm leading-relaxed">
+                Ronaldo Nazario es conocido en todo el mundo como uno de los delanteros más letales que el fútbol ha
+                visto jamás - y eso es algo que todos saben. Su identidad es legendaria: velocidad sobrehumana, regate
+                extraordinario, definición impecable, y una capacidad técnica inigualable. Un genio brasileño, un
+                fenómeno natural, un talento único, y docenas de otros elogios dependiendo de quién cuente la historia.
+              </p>
+
+              <div className="space-y-6">
+                <div>
+                  <p className="text-xs text-gray-500">HABILIDAD TÉCNICA</p>
+                  <p className="text-xl font-bold">REGATE MAGISTRAL</p>
+                </div>
+
+                <div>
+                  <p className="text-xs text-gray-500">CARACTERÍSTICA</p>
+                  <p className="text-xl font-bold">VELOCIDAD</p>
+                </div>
+
+                <div>
+                  <p className="text-xs text-gray-500">HABILIDAD DEFINITIVA</p>
+                  <p className="text-xl font-bold">EL GOL IMPOSIBLE</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+    </main>
+  )
 }
