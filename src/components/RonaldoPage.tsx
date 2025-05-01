@@ -79,8 +79,8 @@ type Stat = {
         useEffect(() => {
         const handleScroll = () => {
             if (sectionRef.current) {
-            const { top } = sectionRef.current.getBoundingClientRect();
-            const offsetValue = window.scrollY * speed;
+                sectionRef.current.getBoundingClientRect(); // Si necesitas llamar a la función
+                const offsetValue = window.scrollY * speed;
             setOffset(offsetValue);
             }
         };
@@ -158,15 +158,6 @@ type Stat = {
     const [currentTab, setCurrentTab] = useState('all');
     const [isPreloading, setIsPreloading] = useState(true);
     
-    // Refs
-    const sectionsRef = useRef({
-        home: useRef(null),
-        about: useRef(null),
-        career: useRef(null),
-        achievements: useRef(null),
-        gallery: useRef(null),
-        contact: useRef(null)
-    });
 
     // Datos de estadísticas
     const stats: Stat[] = [
@@ -232,8 +223,6 @@ type Stat = {
             setScrolled(false);
         }
 
-        // Detección de sección activa para menú
-        const scrollPosition = window.scrollY + 100;
         };
 
         window.addEventListener('scroll', handleScroll);
