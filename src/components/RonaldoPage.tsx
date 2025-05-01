@@ -548,12 +548,12 @@ const scrollToSection = (sectionId: string): void => {
                 <h3 className="text-2xl font-bold mb-4">El jugador que cambió el fútbol para siempre</h3>
                 <p className="text-gray-300 mb-6 leading-relaxed">
                     Ronaldo Luís Nazário de Lima, comúnmente conocido como Ronaldo, es considerado uno de los más grandes jugadores.
-                    </p>
+                </p>
                 <p className="text-gray-300 mb-6 leading-relaxed">
                     Su combinación única de velocidad, fuerza, técnica y finalización lo convirtió en un delantero prácticamente imparable. A pesar de sufrir graves lesiones durante su carrera, su capacidad para reinventarse demostró su extraordinaria mentalidad y dedicación al deporte.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                    Apodado "El Fenómeno" por su capacidad para realizar lo imposible en el campo, Ronaldo dejó una huella imborrable en cada club donde jugó y es recordado como uno de los jugadores más influyentes en la historia del fútbol.
+                    Apodado &ldquo;El Fenómeno&rdquo; por su capacidad para realizar lo imposible en el campo, Ronaldo dejó una huella imborrable en cada club donde jugó y es recordado como uno de los jugadores más influyentes en la historia del fútbol.
                 </p>
                 </div>
                 
